@@ -1,10 +1,10 @@
-package org.fastcampus.user.domain;
+package org.fastcampus.common.domain;
 
-public class UserRelationCounter {
+public class PositiveIntegerCounter {
 
     private int count;
 
-    public UserRelationCounter() {
+    public PositiveIntegerCounter() {
         count = 0;
     }
 
