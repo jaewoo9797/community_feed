@@ -4,7 +4,7 @@ import org.fastcampus.post.domain.common.DateTimeInfo;
 
 public abstract class Content {
     protected String contentText;
-    final DateTimeInfo dateTimeInfo;
+    protected final DateTimeInfo dateTimeInfo;
 
     protected Content(String contentText) {
         checkText(contentText);
