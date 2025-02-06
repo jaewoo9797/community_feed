@@ -1,11 +1,14 @@
 package org.fastcampus.post.domain;
 
 import java.util.Objects;
+import lombok.Builder;
+import lombok.Getter;
 import org.fastcampus.common.domain.PositiveIntegerCounter;
 import org.fastcampus.post.domain.content.Content;
 import org.fastcampus.post.domain.content.PostContent;
 import org.fastcampus.user.domain.User;
 
+@Getter
 public class Post {
 
     private final Long id;
@@ -22,6 +25,16 @@ public class Post {
         this.author = author;
         this.content = content;
         this.likeCount = new PositiveIntegerCounter();
+        this.state = state;
+    }
+
+    @Builder
+    public Post(Long id, User author, PostContent content, PositiveIntegerCounter likeCount,
+        PostPublicationState state) {
+        this.id = id;
+        this.author = author;
+        this.content = content;
+        this.likeCount = likeCount;
         this.state = state;
     }
 
@@ -45,25 +58,6 @@ public class Post {
         }
         this.state = updateState;
         this.content.updateContent(updateContent);
-    }
-
-    public int getLikeCount() {
-        return likeCount.getCount();
-    }
-
-    public Long getId() {
-        return id;
-    }
-    public User getAuthor() {
-        return author;
-    }
-
-    public PostContent getContent() {
-        return content;
-    }
-
-    public PostPublicationState getState() {
-        return state;
     }
 
     @Override

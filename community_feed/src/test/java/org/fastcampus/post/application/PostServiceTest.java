@@ -46,7 +46,7 @@ class PostServiceTest {
             new UpdatePostRequestDto(savedPost.getId(), "update post content",
                 PostPublicationState.PUBLIC);
         // when
-        Post updatePost = postService.updatePost(savedPost.getId(), updatePostRequestDto);
+        Post updatePost = postService.updatePost(user.getId(), updatePostRequestDto);
         // then
 
         assertEquals(updatePost.getId(), savedPost.getId());

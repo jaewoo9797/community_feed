@@ -8,6 +8,10 @@ public class PositiveIntegerCounter {
         count = 0;
     }
 
+    public PositiveIntegerCounter(int count) {
+        this.count = count;
+    }
+
     public void increase() {
         count++;
     }
